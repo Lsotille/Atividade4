@@ -1,0 +1,5 @@
+package com.constants;
+
+public enum CargoPolitico {
+    VEREADOR,PREFEITO,DEPUTADOESTADUAL,DEPUTADOFEDERAL,SENADOR,GOVERNADOR,PRESIDENTE;
+}

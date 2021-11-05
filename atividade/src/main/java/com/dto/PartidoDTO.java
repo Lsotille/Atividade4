@@ -1,6 +1,5 @@
 package com.dto;
 
-import com.constants.Ideologia;
 import lombok.Data;
 
 import java.util.Date;
@@ -15,7 +14,7 @@ public class PartidoDTO {
 
     private String sigla;
 
-    private Ideologia ideologia;
+    private String ideologia;
 
 
     private Date dataFundacao;

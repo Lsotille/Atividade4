@@ -1,8 +1,7 @@
 package com.entity;
 
-import com.constants.CargoPolitico;
-import com.constants.Genero;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.validacao.CargoPolitico;
+import com.validacao.Genero;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,11 +18,11 @@ public class Associados {
 
     private String nome;
 
-    private CargoPolitico cargo;
+    private String cargo;
 
     private Date dataNascimento;
 
-    private Genero genero;
+    private String genero;
 
     @ManyToOne
     private Partidos partidos;

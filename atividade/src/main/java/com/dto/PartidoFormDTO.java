@@ -1,6 +1,6 @@
 package com.dto;
 
-import com.constants.Ideologia;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
@@ -13,7 +13,7 @@ public class PartidoFormDTO {
 
     private String sigla;
 
-    private Ideologia ideologia;
+    private String ideologia;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone = "GMT-03")
     private Date dataFundacao;

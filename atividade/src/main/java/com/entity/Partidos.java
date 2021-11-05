@@ -1,7 +1,5 @@
 package com.entity;
 
-import com.constants.Ideologia;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,7 +19,7 @@ public class Partidos {
 
     private String sigla;
 
-    private Ideologia ideologia;
+    private String ideologia;
 
     private Date dataFundacao;
 

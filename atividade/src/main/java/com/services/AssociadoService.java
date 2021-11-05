@@ -3,9 +3,11 @@ package com.services;
 import com.dto.AssociadoDTO;
 import com.dto.AssociadoFormDTO;
 import com.dto.PartidoDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface AssociadoService {
 
 

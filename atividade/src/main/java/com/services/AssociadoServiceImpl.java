@@ -6,6 +6,8 @@ import com.entity.Associados;
 import com.entity.Partidos;
 import com.repository.AssociadoRepository;
 import com.repository.PartidoRepository;
+import com.validacao.CargoPolitico;
+import com.validacao.Genero;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.modelmapper.ModelMapper;
 
@@ -15,6 +17,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class AssociadoServiceImpl implements AssociadoService {
+
     @Autowired
     private AssociadoRepository repository;
 
@@ -22,11 +25,19 @@ public class AssociadoServiceImpl implements AssociadoService {
     private PartidoRepository repositoryP;
 
     @Autowired
+    private Genero genero;
+
+    @Autowired
+    private CargoPolitico cargoPolitico;
+
+    @Autowired
     private ModelMapper mapper;
 
     @Override
     public AssociadoDTO salvar(AssociadoFormDTO body) {
         Associados associados = mapper.map(body, Associados.class);
+        genero.validarGenero(associados);
+        cargoPolitico.validarCargo(associados);
         Associados associadosResponse = this.repository.save(associados);
         return mapper.map(associadosResponse, AssociadoDTO.class);
     }

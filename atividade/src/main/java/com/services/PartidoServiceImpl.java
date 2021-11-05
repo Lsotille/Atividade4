@@ -1,21 +1,27 @@
 package com.services;
 
+import com.validacao.Ideologia;
 import com.dto.PartidoDTO;
 import com.dto.PartidoFormDTO;
 import com.entity.Partidos;
 import com.repository.PartidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class PartidoServiceImpl implements PartidoService {
 
     @Autowired
     private PartidoRepository repository;
+
+    @Autowired
+    private Ideologia ideologia;
 
     @Autowired
     private ModelMapper mapper;
@@ -23,6 +29,7 @@ public class PartidoServiceImpl implements PartidoService {
     @Override
     public PartidoDTO salvar(PartidoFormDTO body) {
         Partidos partidos = mapper.map(body, Partidos.class);
+        ideologia.validarIdeologia(partidos);
         Partidos partidosResponse = this.repository.save(partidos);
         return mapper.map(partidosResponse, PartidoDTO.class);
     }

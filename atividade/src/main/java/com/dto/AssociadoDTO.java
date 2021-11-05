@@ -1,7 +1,7 @@
 package com.dto;
 
-import com.constants.CargoPolitico;
-import com.constants.Genero;
+import com.validacao.CargoPolitico;
+import com.validacao.Genero;
 import lombok.Data;
 
 import java.util.Date;
@@ -17,7 +17,7 @@ public class AssociadoDTO {
 
     private Date dataNascimento;
 
-    private Genero genero;
+    private String genero;
 
     private PartidoDTO partido;
 }

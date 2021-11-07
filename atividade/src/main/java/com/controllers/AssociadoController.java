@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/partidos")
+@RequestMapping("/associado")
 public class AssociadoController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class AssociadoController {
         return ResponseEntity.ok(this.service.procurar(id));
     }
 
-    @GetMapping(path = "/{id}")
+    @PostMapping(path = "/{id}")
     public ResponseEntity<AssociadoDTO> atualizar (@RequestParam(value = "id", required = true) Long id,@RequestBody AssociadoFormDTO body){
         return ResponseEntity.ok(this.service.atualizar(id,body));
     }

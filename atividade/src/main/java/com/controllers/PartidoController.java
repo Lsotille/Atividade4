@@ -37,7 +37,7 @@ public class PartidoController {
         return ResponseEntity.ok(this.service.procurar(id));
     }
 
-    @PostMapping(path = "/{id}")
+    @PutMapping(path = "/{id}")
     public ResponseEntity<PartidoDTO> atualizar (@RequestParam(value = "id", required = true) Long id,@RequestBody PartidoFormDTO body){
         return ResponseEntity.ok(this.service.atualizar(id,body));
     }

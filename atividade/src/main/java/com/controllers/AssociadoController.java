@@ -33,7 +33,7 @@ public class AssociadoController {
         return ResponseEntity.ok(this.service.procurar(id));
     }
 
-    @PostMapping(path = "/{id}")
+    @PutMapping(path = "/{id}")
     public ResponseEntity<AssociadoDTO> atualizar (@RequestParam(value = "id", required = true) Long id,@RequestBody AssociadoFormDTO body){
         return ResponseEntity.ok(this.service.atualizar(id,body));
     }
@@ -44,7 +44,7 @@ public class AssociadoController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping(path = "/{id}/{id}")
+    @PutMapping(path = "/{id}/{id}")
     public ResponseEntity<AssociadoDTO> vincularPartido (@RequestParam(value = "id", required = true) Long id,@RequestParam(value = "id", required = true) Long idP){
         return ResponseEntity.ok(this.service.vincularPartido(id,idP));
     }
